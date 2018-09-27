@@ -643,6 +643,7 @@
                 left: 100%;
             }
         }
+
         .errorClass {
             border: 1px solid red;
         }
@@ -947,98 +948,109 @@
         </div>
     </div>
     <ul class="list-group dash_menu_ul">
-        @if($loginUser->id == 1)
-            <li class="right_menu_li">
-                <a href="{{url('admin')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">Dashboard</span>
-                </a>
-            </li>
-            <li class="right_menu_li">
-                <a href="{{url('franchise')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">Franchise</span>
-                </a>
-            </li>
+        <li class="right_menu_li">
+            <a href="{{url('admin')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Dashboard</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            <a href="{{url('category')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Category</span>
+            </a>
+        </li>
 
-            <li class="right_menu_li">
-                <a href="{{url('user_master')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">All Users</span>
-                </a>
-            </li>
+        <li class="right_menu_li">
+            <a href="{{url('user_master')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Driver Registration</span>
+            </a>
+        </li>
 
-            <li class="right_menu_li">
-                <a href="{{url('user_master?type=active')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">Active Users</span>
-                </a>
-            </li>
-            <li class="right_menu_li">
-                <a href="{{url('user_master?type=inactive')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">InActive Users</span>
-                </a>
-            </li>
+        <li class="right_menu_li">
+            <a href="{{url('user_master?type=active')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Drivers List</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            <a href="{{url('user_master?type=inactive')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Online Drivers</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            <a href="{{url('user_master?type=inactive')}}">
+                {{--     <a href="{{url('/userlist')}}">--}}
+                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
+                <span class="aside_menu_txt">Drivers Daily Collection</span>
+            </a>
+        </li>
 
-            <li class="right_menu_li">
-                {{-- <a href="{{url('/orderlist')}}">--}}
-                <a href="{{url('advertisement')}}">
-                    <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
-                    <span class="aside_menu_txt">Advertisements</span>
-                </a>
-            </li>
+        <li class="right_menu_li">
+            {{-- <a href="{{url('/orderlist')}}">--}}
+            <a href="{{url('advertisement')}}">
+                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
+                <span class="aside_menu_txt">Users</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            {{-- <a href="{{url('/orderlist')}}">--}}
+            <a href="{{url('advertisement')}}">
+                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
+                <span class="aside_menu_txt">Users Drives Summary</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            {{-- <a href="{{url('/orderlist')}}">--}}
+            <a href="{{url('advertisement')}}">
+                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
+                <span class="aside_menu_txt">Users Drives</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            {{-- <a href="{{url('/orderlist')}}">--}}
+            <a href="{{url('advertisement')}}">
+                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
+                <span class="aside_menu_txt">Locate Drives</span>
+            </a>
+        </li>
 
-            <li class="right_menu_li">
-                {{--<a href="{{url('/delivery')}}">--}}
-                <a href="{{url('redeem_requests')}}">
-                    <i class="dash_arrow mdi mdi-gift global_color"></i>
-                    <span class="aside_menu_txt">Redeem Requests</span>
-                </a>
-            </li>
+        <li class="right_menu_li">
+            {{--<a href="{{url('/delivery')}}">--}}
+            <a href="{{url('redeem_requests')}}">
+                <i class="dash_arrow mdi mdi-gift global_color"></i>
+                <span class="aside_menu_txt">Rate Card</span>
+            </a>
+        </li>
 
-            <li class="right_menu_li">
-                {{--<a href="{{url('/review')}}">--}}
-                <a href="{{url('gain_type_points')}}">
-                    <i class="dash_arrow mdi mdi-forum global_color"></i>
-                    <span class="aside_menu_txt">Gain Type Points</span>
-                </a>
-            </li>
-            <li class="right_menu_li">
-                {{--<a href="{{url('/review')}}">--}}
-                <a href="{{url('key')}}">
-                    <i class="dash_arrow mdi mdi-forum global_color"></i>
-                    <span class="aside_menu_txt">Key</span>
-                </a>
-            </li>
-        @else
-            <li class="right_menu_li">
-                <a href="{{url('admin')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">Dashboard</span>
-                </a>
-            </li>
-            <li class="right_menu_li">
-                <a href="{{url('user_master?type=inactive')}}">
-                    {{--     <a href="{{url('/userlist')}}">--}}
-                    <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                    <span class="aside_menu_txt">InActive Users</span>
-                </a>
-            </li>
-            <li class="right_menu_li">
-                {{--<a href="{{url('/review')}}">--}}
-                <a href="{{url('franchise_keys')}}">
-                    <i class="dash_arrow mdi mdi-forum global_color"></i>
-                    <span class="aside_menu_txt">Keys</span>
-                </a>
-            </li>
-        @endif
+        <li class="right_menu_li">
+            {{--<a href="{{url('/review')}}">--}}
+            <a href="{{url('gain_type_points')}}">
+                <i class="dash_arrow mdi mdi-forum global_color"></i>
+                <span class="aside_menu_txt">Offers</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            {{--<a href="{{url('/review')}}">--}}
+            <a href="{{url('key')}}">
+                <i class="dash_arrow mdi mdi-forum global_color"></i>
+                <span class="aside_menu_txt">Daily Collections</span>
+            </a>
+        </li>
+        <li class="right_menu_li">
+            {{--<a href="{{url('/review')}}">--}}
+            <a href="{{url('key')}}">
+                <i class="dash_arrow mdi mdi-forum global_color"></i>
+                <span class="aside_menu_txt">Admin Registration</span>
+            </a>
+        </li>
     </ul>
 
 </aside>
