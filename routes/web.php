@@ -28,6 +28,14 @@ Route::get('/logincheck', 'AdminController@logincheck');
 Route::resource('category', 'CategoryController');
 Route::get('category/{id}/inactivate', 'CategoryController@inactivate');
 
+Route::resource('rates', 'RatesController');
+Route::get('rates/{id}/inactivate', 'RatesController@destroy');
+
+
+Route::resource('offers', 'OffersController');
+Route::get('offers/{id}/inactivate', 'RatesController@destroy');
+
+
 
 
 

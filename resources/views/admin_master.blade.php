@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{url('assets/css/form-wizard-green.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/dataTables.bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{url('assets/css/text_editor.css')}}">
+    <link href="{{ url('assets/css/datepicker.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <script src="{{url('assets/js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
@@ -963,60 +964,65 @@
             </a>
         </li>
 
-        <li class="right_menu_li">
-            <a href="{{url('user_master')}}">
-                {{--     <a href="{{url('/userlist')}}">--}}
-                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                <span class="aside_menu_txt">Driver Registration</span>
+        <li class="right_menu_li" onclick="MenuClick(this);">
+            <a href="javascript:;">
+                <i class="dash_arrow mdi mdi-sitemap  global_color"></i>
+                Drivers
+                <i class="mdi mdi-chevron-right icon-left-arrow"></i>
             </a>
+            <ul class="list-group dash_sub_menu">
+                <li>
+                    <a href="{{url('#')}}">Driver Registration</a>
+                </li>
+                <li>
+                    <a href="{{url('#')}}">Drivers List</a>
+                </li>
+                <li>
+                    <a href="{{url('#')}}">Online Drivers</a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="right_menu_li" onclick="MenuClick(this);">
+            <a href="javascript:;">
+                <i class="dash_arrow mdi mdi-sitemap  global_color"></i>
+                Collections
+                <i class="mdi mdi-chevron-right icon-left-arrow"></i>
+            </a>
+            <ul class="list-group dash_sub_menu">
+                <li>
+                    <a href="{{url('#')}}">Drivers Daily Collection</a>
+                </li>
+                <li>
+                    <a href="{{url('#')}}">Daily Collections</a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="right_menu_li" onclick="MenuClick(this);">
+            <a href="javascript:;">
+                <i class="dash_arrow mdi mdi-sitemap  global_color"></i>
+                Users
+                <i class="mdi mdi-chevron-right icon-left-arrow"></i>
+            </a>
+            <ul class="list-group dash_sub_menu">
+                <li>
+                    <a href="{{url('#')}}">Users</a>
+                </li>
+                <li>
+                    <a href="{{url('#')}}">Users Drives Summary</a>
+                </li>
+
+                <li>
+                    <a href="{{url('#')}}">Users Drives</a>
+                </li>
+            </ul>
         </li>
 
         <li class="right_menu_li">
-            <a href="{{url('user_master?type=active')}}">
-                {{--     <a href="{{url('/userlist')}}">--}}
-                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                <span class="aside_menu_txt">Drivers List</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            <a href="{{url('user_master?type=inactive')}}">
-                {{--     <a href="{{url('/userlist')}}">--}}
-                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                <span class="aside_menu_txt">Online Drivers</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            <a href="{{url('user_master?type=inactive')}}">
-                {{--     <a href="{{url('/userlist')}}">--}}
-                <i class="dash_arrow mdi mdi-account-multiple global_color"></i>
-                <span class="aside_menu_txt">Drivers Daily Collection</span>
-            </a>
-        </li>
-
-        <li class="right_menu_li">
             {{-- <a href="{{url('/orderlist')}}">--}}
-            <a href="{{url('advertisement')}}">
-                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
-                <span class="aside_menu_txt">Users</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            {{-- <a href="{{url('/orderlist')}}">--}}
-            <a href="{{url('advertisement')}}">
-                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
-                <span class="aside_menu_txt">Users Drives Summary</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            {{-- <a href="{{url('/orderlist')}}">--}}
-            <a href="{{url('advertisement')}}">
-                <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
-                <span class="aside_menu_txt">Users Drives</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            {{-- <a href="{{url('/orderlist')}}">--}}
-            <a href="{{url('advertisement')}}">
+            <a href="{{url('#')}}">
                 <i class="dash_arrow mdi mdi-clipboard-plus global_color"></i>
                 <span class="aside_menu_txt">Locate Drives</span>
             </a>
@@ -1024,7 +1030,7 @@
 
         <li class="right_menu_li">
             {{--<a href="{{url('/delivery')}}">--}}
-            <a href="{{url('redeem_requests')}}">
+            <a href="{{url('rates')}}">
                 <i class="dash_arrow mdi mdi-gift global_color"></i>
                 <span class="aside_menu_txt">Rate Card</span>
             </a>
@@ -1032,23 +1038,25 @@
 
         <li class="right_menu_li">
             {{--<a href="{{url('/review')}}">--}}
-            <a href="{{url('gain_type_points')}}">
+            <a href="{{url('offers')}}">
                 <i class="dash_arrow mdi mdi-forum global_color"></i>
                 <span class="aside_menu_txt">Offers</span>
             </a>
         </li>
+
         <li class="right_menu_li">
             {{--<a href="{{url('/review')}}">--}}
-            <a href="{{url('key')}}">
-                <i class="dash_arrow mdi mdi-forum global_color"></i>
-                <span class="aside_menu_txt">Daily Collections</span>
-            </a>
-        </li>
-        <li class="right_menu_li">
-            {{--<a href="{{url('/review')}}">--}}
-            <a href="{{url('key')}}">
+            <a href="{{url('#')}}">
                 <i class="dash_arrow mdi mdi-forum global_color"></i>
                 <span class="aside_menu_txt">Admin Registration</span>
+            </a>
+        </li>
+
+        <li class="right_menu_li">
+            {{--<a href="{{url('/review')}}">--}}
+            <a href="{{url('logout')}}">
+                <i class="dash_arrow mdi mdi-forum global_color"></i>
+                <span class="aside_menu_txt">Logout</span>
             </a>
         </li>
     </ul>
@@ -1081,6 +1089,7 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
+<script src="{{ url('assets/js/bootstrap-datepicker.js') }}"></script>
 
 @if(session()->has('message'))
     <script type="text/javascript">
