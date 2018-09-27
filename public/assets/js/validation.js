@@ -33,7 +33,7 @@ function validate(frm) {
     function setError(dispMsg) {
         $(this).next('.errorText').remove();
         $(this).addClass('errorClass');
-        $(this).after("<p class='errorText'>" + dispMsg + "</p>");
+        // $(this).after("<p class='errorText'>" + dispMsg + "</p>");
         event.preventDefault();
          ret = false;
     }

@@ -122,7 +122,7 @@ class CategoryController extends Controller
     public function inactivate($id)
     {
         $category = Category::find($id);
-        $category->is_active = 0;
+        $category->category_status = 0;
         $category->save();
         return redirect('category')->with('message', 'Category has been deleted');
     }

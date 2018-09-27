@@ -47,27 +47,27 @@
                 <div class='form-group'>
                     {!! Form::label('category_name', 'Length *', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_length', null, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Length in Feets']) !!}
+                        {!! Form::text('category_length', null, ['class' => 'form-control required input-sm', 'placeholder'=>'Enter Length in Feets']) !!}
                     </div>
                 </div>
                 <div class='form-group'>
                     {!! Form::label('category_name', 'Width *', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_width', null, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Width in Feets']) !!}
+                        {!! Form::text('category_width', null, ['class' => 'form-control required input-sm', 'placeholder'=>'Enter Width in Feets']) !!}
                     </div>
                 </div>
 
                 <div class='form-group'>
                     {!! Form::label('category_name', 'Height *', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_height', null, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Height in Feets']) !!}
+                        {!! Form::text('category_height', null, ['class' => 'form-control required input-sm', 'placeholder'=>'Enter Height in Feets']) !!}
                     </div>
                 </div>
 
                 <div class='form-group'>
-                    {!! Form::label('category_name', 'Description *', ['class' => 'col-sm-3 control-label']) !!}
+                    {!! Form::label('category_name', 'Description', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_desc', null, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Description']) !!}
+                        {!! Form::text('category_desc', null, ['class' => 'form-control input-sm', 'placeholder'=>'Enter Description']) !!}
                     </div>
                 </div>
 

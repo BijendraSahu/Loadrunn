@@ -43,13 +43,13 @@
                 <div class='form-group'>
                     {!! Form::label('category_name', 'Length *', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_length', $category->category_length, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Length in Feets']) !!}
+                        {!! Form::text('category_length', $category->category_length, ['class' => 'form-control required input-sm', 'placeholder'=>'Enter Length in Feets']) !!}
                     </div>
                 </div>
                 <div class='form-group'>
                     {!! Form::label('category_name', 'Width *', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_width', $category->category_width, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Width in Feets']) !!}
+                        {!! Form::text('category_width', $category->category_width, ['class' => 'form-control required input-sm', 'placeholder'=>'Enter Width in Feets']) !!}
                     </div>
                 </div>
 
@@ -61,9 +61,9 @@
                 </div>
 
                 <div class='form-group'>
-                    {!! Form::label('category_name', 'Description *', ['class' => 'col-sm-3 control-label']) !!}
+                    {!! Form::label('category_name', 'Description', ['class' => 'col-sm-3 control-label']) !!}
                     <div class='col-sm-9'>
-                        {!! Form::text('category_desc', $category->category_desc, ['class' => 'form-control amount required input-sm', 'placeholder'=>'Enter Description']) !!}
+                        {!! Form::text('category_desc', $category->category_desc, ['class' => 'form-control input-sm', 'placeholder'=>'Enter Description']) !!}
                     </div>
                 </div>
 
