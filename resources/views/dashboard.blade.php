@@ -33,181 +33,138 @@
 
     <section class="box_containner">
         <div class="container-fluid">
-            @if($_SESSION['admin_master']['id'] == 1)
-                <div class="row">
-                    <section id="menu1">
-                        <div class="home_brics_row">
-                            @php
-                                $franchise =\App\AdminModel::where('id', '>', 1)->count();
-                                $users = \App\UserMaster::getActiveUserMaster();
-                                $active_users = \App\UserMaster::getPaidUserMaster();
-                                $inactive_users = \App\UserMaster::getUnPaidUserMaster();
-                            @endphp
-                            <a href="{{url('franchise')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr4"><i
-                                                        class="mdi mdi-gift"></i></div>
-                                            <div class="white_brics_txt">Franchise</div>
-                                            <div class="white_brics_count">{{$franchise}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr4"></div>
+            <div class="row">
+                <section id="menu1">
+                    <div class="home_brics_row">
+                        @php
+                            $category =\App\Category::where('category_status', '=', 1)->count();
+                        @endphp
+                        <a href="{{url('category')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr4"><i
+                                                    class="mdi mdi-gift"></i></div>
+                                        <div class="white_brics_txt">Category</div>
+                                        <div class="white_brics_count">{{$category}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr4"></div>
                                 </div>
-                            </a>
-                            <a href="{{url('user_master')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk"><i class="mdi mdi-tag"></i></div>
-                                            <div class="white_brics_txt">All Users</div>
-                                            <div class="white_brics_count">{{count($users)}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr1"></div>
+                            </div>
+                        </a>
+                        <a href="{{url('user_master')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk"><i class="mdi mdi-tag"></i></div>
+                                        <div class="white_brics_txt">Drivers List</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr1"></div>
                                 </div>
-                            </a>
-                            <a href="{{url('user_master?type=active')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr2"><i
-                                                        class="mdi mdi-content-duplicate"></i></div>
-                                            <div class="white_brics_txt">Active Users</div>
-                                            <div class="white_brics_count">{{count($active_users)}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr2" style="
+                            </div>
+                        </a>
+                        <a href="{{url('user_master?type=active')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr2"><i
+                                                    class="mdi mdi-content-duplicate"></i></div>
+                                        <div class="white_brics_txt">Drivers Daily Collections</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
+                                    </div>
+                                    <div class="brics_progress white_brics_border_clr2" style="
 "></div>
-                                    </div>
                                 </div>
-                            </a>
-                            <a href="{{url('user_master?type=inactive')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr4"><i
-                                                        class="mdi mdi-clipboard-plus"></i></div>
-                                            <div class="white_brics_txt">InActive Users</div>
-                                            <div class="white_brics_count">{{count($inactive_users)}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr4"></div>
+                            </div>
+                        </a>
+                        <a href="{{url('user_master?type=inactive')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr4"><i
+                                                    class="mdi mdi-clipboard-plus"></i></div>
+                                        <div class="white_brics_txt">InActive Users</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr4"></div>
                                 </div>
-                            </a>
+                            </div>
+                        </a>
 
 
-                        </div>
-                    </section>
-                </div>
-                <div class="row">
-                    <section id="menu1">
-                        <div class="home_brics_row">
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section id="menu1">
+                    <div class="home_brics_row">
 
-                            @php
-                                $advertisement =\App\Advertisement::where(['is_active' => 1])->count();
-                                $redeem_request = \App\RedeemRequest::count();
-                                $gain_t = \App\GainTypePoints::count();
-                                $keys = \App\UserKey::count();
-                            @endphp
-                            <a href="{{url('advertisement')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr3"><i
-                                                        class="mdi mdi-forum"></i></div>
-                                            <div class="white_brics_txt">Advertisement</div>
-                                            <div class="white_brics_count">{{$advertisement}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr3"></div>
+                        {{--@php--}}
+                        {{--$advertisement =\App\Advertisement::where(['is_active' => 1])->count();--}}
+                        {{--$redeem_request = \App\RedeemRequest::count();--}}
+                        {{--$gain_t = \App\GainTypePoints::count();--}}
+                        {{--$keys = \App\UserKey::count();--}}
+                        {{--@endphp--}}
+                        <a href="{{url('advertisement')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr3"><i
+                                                    class="mdi mdi-forum"></i></div>
+                                        <div class="white_brics_txt">Advertisement</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr3"></div>
                                 </div>
-                            </a>
+                            </div>
+                        </a>
 
-                            <a href="{{url('redeem_requests')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk"><i class="mdi mdi-cellphone-android"></i></div>
-                                            <div class="white_brics_txt">Redeem Requests</div>
-                                            <div class="white_brics_count">{{$redeem_request}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr1"></div>
+                        <a href="{{url('redeem_requests')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk"><i class="mdi mdi-cellphone-android"></i></div>
+                                        <div class="white_brics_txt">Redeem Requests</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr1"></div>
                                 </div>
-                            </a>
-                            <a href="{{url('gain_type_points')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr2"><i
-                                                        class="mdi mdi-message-image"></i></div>
-                                            <div class="white_brics_txt">Gain Type Points</div>
-                                            <div class="white_brics_count">{{$gain_t}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr2" style="
+                            </div>
+                        </a>
+                        <a href="{{url('gain_type_points')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr2"><i
+                                                    class="mdi mdi-message-image"></i></div>
+                                        <div class="white_brics_txt">Gain Type Points</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
+                                    </div>
+                                    <div class="brics_progress white_brics_border_clr2" style="
 "></div>
-                                    </div>
                                 </div>
-                            </a>
-                            <a href="{{url('key')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr2"><i
-                                                        class="mdi mdi-message-image"></i></div>
-                                            <div class="white_brics_txt">Key</div>
-                                            <div class="white_brics_count">{{$keys}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr2" style=""></div>
+                            </div>
+                        </a>
+                        <a href="{{url('key')}}">
+                            <div class="col-sm-3">
+                                <div class="white_brics">
+                                    <div class="white_icon_withtxt">
+                                        <div class="white_icons_blk white_brics_clr2"><i
+                                                    class="mdi mdi-message-image"></i></div>
+                                        <div class="white_brics_txt">Key</div>
+                                        <div class="white_brics_count">{{"0"}}</div>
                                     </div>
+                                    <div class="brics_progress white_brics_border_clr2" style=""></div>
                                 </div>
-                            </a>
+                            </div>
+                        </a>
 
 
-                        </div>
-                    </section>
-                </div>
-            @else
-                <div class="row">
-                    <section id="menu1">
-                        <div class="home_brics_row">
-                            @php
-                                $inactive_users = \App\UserMaster::getUnPaidUserMaster();
-                         $key = \App\UserKey::where('franchise_id', '=', $_SESSION['admin_master']->id)->where('is_active', '=', 1)->count()
-                            @endphp
+                    </div>
+                </section>
+            </div>
 
-                            <a href="{{url('user_master?type=inactive')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr4"><i
-                                                        class="mdi mdi-clipboard-plus"></i></div>
-                                            <div class="white_brics_txt">InActive Users</div>
-                                            <div class="white_brics_count">{{count($inactive_users)}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr4"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="{{url('franchise_keys')}}">
-                                <div class="col-sm-3">
-                                    <div class="white_brics">
-                                        <div class="white_icon_withtxt">
-                                            <div class="white_icons_blk white_brics_clr4"><i
-                                                        class="mdi mdi-clipboard-plus"></i></div>
-                                            <div class="white_brics_txt">Keys</div>
-                                            <div class="white_brics_count">{{$key}}</div>
-                                        </div>
-                                        <div class="brics_progress white_brics_border_clr4"></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-                </div>
-            @endif
         </div>
     </section>
 
